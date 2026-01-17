@@ -19,7 +19,7 @@ data "terraform_remote_state" "s3" {
     
     # 어드민 권한이 있는 역할을 명시적으로 사용
     assume_role = {
-      role_arn = "arn:aws:iam::[사용자_계정_ID]:role/atlantis-bhuny-id-admin"
+      role_arn = "arn:aws:iam::633309913072:role/atlantis-bhuny-id-admin"
     }
   }
 }
