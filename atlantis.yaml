@@ -193,8 +193,8 @@ projects:
     apply_requirements: []
     workflow: id
 
-  - name: s3/zerone-id
-    dir: terraform/s3/zerone-id
+  - name: s3/bhuny-id
+    dir: terraform/s3/bhuny-id
     workspace: default
     terraform_version: 1.7.0
     autoplan:
