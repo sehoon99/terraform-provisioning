@@ -25,8 +25,8 @@ projects:
     apply_requirements: []
     workflow: id    
 
-  - name: vpc/tmcd_apnortheast2
-    dir: terraform/vpc/tmcd_apnortheast2
+  - name: vpc/bhunyd_apnortheast2
+    dir: terraform/vpc/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -100,8 +100,8 @@ projects:
     apply_requirements: []
     workflow: id   
 
-  - name: securitygroup/zerone-id/tmcd_apnortheast2
-    dir: terraform/securitygroup/zerone-id/tmcd_apnortheast2
+  - name: securitygroup/zerone-id/bhunyd_apnortheast2
+    dir: terraform/securitygroup/zerone-id/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -113,8 +113,8 @@ projects:
     apply_requirements: []
     workflow: id       
 
-  - name: codebuild/zerone-id/tmcd_apnortheast2
-    dir: terraform/codebuild/zerone-id/tmcd_apnortheast2
+  - name: codebuild/zerone-id/bhunyd_apnortheast2
+    dir: terraform/codebuild/zerone-id/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -140,8 +140,8 @@ projects:
     apply_requirements: []
     workflow: id
 
-  - name: platform/jenkins/tmcd_apnortheast2
-    dir: terraform/platform/jenkins/tmcd_apnortheast2
+  - name: platform/jenkins/bhunyd_apnortheast2
+    dir: terraform/platform/jenkins/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -167,8 +167,8 @@ projects:
     apply_requirements: []
     workflow: id    
 
-  - name: ecs/demo/tmcd_apnortheast2
-    dir: terraform/ecs/demo/tmcd_apnortheast2
+  - name: ecs/demo/bhunyd_apnortheast2
+    dir: terraform/ecs/demo/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -206,8 +206,8 @@ projects:
     apply_requirements: []
     workflow: id  
 
-  - name: services/demoapp/tmcd_apnortheast2
-    dir: terraform/services/demoapp/tmcd_apnortheast2
+  - name: services/demoapp/bhunyd_apnortheast2
+    dir: terraform/services/demoapp/bhunyd_apnortheast2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -219,8 +219,8 @@ projects:
     apply_requirements: []
     workflow: id
     
-  - name: eks/tmcd_apnortheast2/tmcdapne2-nhwy
-    dir: terraform/eks/tmcd_apnortheast2/tmcdapne2-nhwy
+  - name: eks/bhunyd_apnortheast2/bhunydapne2-nhwy
+    dir: terraform/eks/bhunyd_apnortheast2/bhunydapne2-nhwy
     workspace: default
     terraform_version: 1.7.0
     autoplan:
