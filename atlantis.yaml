@@ -88,8 +88,8 @@ projects:
     apply_requirements: []
     workflow: id
 
-  - name: ecr/zerone-id/ap-northeast-2
-    dir: terraform/ecr/zerone-id/ap-northeast-2
+  - name: ecr/bhuny-id/ap-northeast-2
+    dir: terraform/ecr/bhuny-id/ap-northeast-2
     workspace: default
     terraform_version: 1.7.0
     autoplan:
@@ -346,6 +346,11 @@ workflows:
             extra_args: [
               "-var 'assume_role_arn=arn:aws:iam::633309913072:role/atlantis-bhuny-id-admin'"
             ]
+        - run: |
+            terraform plan \
+              -target=module.vpc \
+              -var 'assume_role_arn=arn:aws:iam::633309913072:role/atlantis-bhuny-id-admin' \
+              -out=$PLANFILE
     apply:
       steps:
         - apply
