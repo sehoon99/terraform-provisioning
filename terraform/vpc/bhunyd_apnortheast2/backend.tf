@@ -8,4 +8,5 @@ terraform {
     encrypt        = true
     dynamodb_table = "terraform-lock"
   }
+  
 }
