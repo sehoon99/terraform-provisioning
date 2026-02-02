@@ -25,9 +25,9 @@ variable "account_id" {
 variable "remote_state" {
   default = {
     vpc = {
-      tmcd_apnortheast2 = {
+      bhuny_apnortheast2 = {
         bucket = "bhuny-id-apnortheast2-tfstate"
-        key    = "provisioning/terraform/vpc/tmcd_apnortheast2/terraform.tfstate"
+        key    = "provisioning/terraform/vpc/bhunyd_apnortheast2/terraform.tfstate"
         region = "ap-northeast-2"
       }
     }
@@ -51,16 +51,16 @@ variable "remote_state" {
 
     ecs = {
       nginx = {
-        tmcdapne2 = {
+        bhunyapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/ecs/nginx/tmcd_apnortheast2/terraform.tfstate"
+          key    = "provisioning/terraform/ecs/nginx/bhuny_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
       demo = {
-        tmcdapne2 = {
+        bhunyapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/ecs/demo/tmcd_apnortheast2/terraform.tfstate"
+          key    = "provisioning/terraform/ecs/demo/bhuny_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
@@ -68,9 +68,9 @@ variable "remote_state" {
 
     security_group = {
       bhuny-id = {
-        tmcdapne2 = {
+        bhunyapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/securitygroup/bhuny-id/tmcd_apnortheast2/terraform.tfstate"
+          key    = "provisioning/terraform/securitygroup/bhuny-id/bhuny_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
@@ -97,9 +97,9 @@ variable "remote_state" {
     }
 
     eks = {
-      tmcdapne2-nhwy = {
+      bhunyapne2-nhwy = {
         bucket = "bhuny-id-apnortheast2-tfstate"
-        key    = "provisioning/terraform/eks/tmcd_apnortheast2/tmcdapne2-nhwy/terraform.tfstate"
+        key    = "provisioning/terraform/eks/bhuny_apnortheast2/bhunyapne2-nhwy/terraform.tfstate"
         region = "ap-northeast-2"
       }
     }
