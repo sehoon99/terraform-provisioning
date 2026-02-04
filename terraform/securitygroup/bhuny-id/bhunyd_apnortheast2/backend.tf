@@ -3,10 +3,9 @@ terraform {
 
   backend "s3" {
     bucket         = "bhuny-id-apnortheast2-tfstate"
-    key            = "provisioning/github/terraform-provisioning/terraform.tfstate"
+    key            = "provisioning/terraform/securitygroup/bhuny-id/bhunyd_apnortheast2/terraform.tfstate"
     region         = "ap-northeast-2"
     encrypt        = true
     dynamodb_table = "terraform-lock"
   }
 }
-

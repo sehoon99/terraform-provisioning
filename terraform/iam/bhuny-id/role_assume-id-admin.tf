@@ -1,5 +1,5 @@
 #
-# zerone-id administrator
+# bhuny-id administrator
 #
 resource "aws_iam_role" "assume_id_admin" {
   name                 = "assume-id-admin"
