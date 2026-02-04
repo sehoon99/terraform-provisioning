@@ -113,3 +113,4 @@ variable "remote_state" {
     }
   }
 }
+#최종.
