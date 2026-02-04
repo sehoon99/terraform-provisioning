@@ -1,4 +1,4 @@
-module "star_terraform_devart_tv" {
+module "ai_news_tracker_com" {
   source = "../_modules/acm"
 
   domain_name = "*.ai-news-tracker.com"
