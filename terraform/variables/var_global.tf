@@ -51,14 +51,14 @@ variable "remote_state" {
 
     ecs = {
       nginx = {
-        bhunyapne2 = {
+        bhunydapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
           key    = "provisioning/terraform/ecs/nginx/bhunyd_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
       demo = {
-        bhunyapne2 = {
+        bhunydapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
           key    = "provisioning/terraform/ecs/demo/bhunyd_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
@@ -68,7 +68,7 @@ variable "remote_state" {
 
     security_group = {
       bhuny-id = {
-        bhunyapne2 = {
+        bhunydapne2 = {
           bucket = "bhuny-id-apnortheast2-tfstate"
           key    = "provisioning/terraform/securitygroup/bhuny-id/bhunyd_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
@@ -97,7 +97,7 @@ variable "remote_state" {
     }
 
     eks = {
-      bhunyapne2-nhwy = {
+      bhunydapne2-nhwy = {
         bucket = "bhuny-id-apnortheast2-tfstate"
         key    = "provisioning/terraform/eks/bhunyd_apnortheast2/bhunydapne2-nhwy/terraform.tfstate"
         region = "ap-northeast-2"
