@@ -8,7 +8,7 @@ module "deployment_jenkins" {
   billing_tag            = data.terraform_remote_state.vpc.outputs.billing_tag
   deployment_default_sg  = data.terraform_remote_state.security_group.outputs.codebuild_deployment_id
   service_role           = "arn:aws:iam::${var.account_id.id}:role/service-role/codebuild-deployment"
-  github_repo            = "https://github.com/DevopsArtFactory/jenkins-deploy-script.git"
+  github_repo            = "https://github.com/sehoon99/jenkins-deploy-script.git"
   build_image            = "aws/codebuild/amazonlinux2-x86_64-standard:5.0"
   buildspec              = "buildspec.yml"
   image_credentials_type = "CODEBUILD"
