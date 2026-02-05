@@ -1,10 +1,10 @@
-resource "aws_iam_role" "demo_bhunyapne2_task_exec" {
-  name               = "demo-bhunyapne2-task-exec"
+resource "aws_iam_role" "demo_bhunydapne2_task_exec" {
+  name               = "demo-bhunydapne2-task-exec"
   path               = "/"
-  assume_role_policy = data.aws_iam_policy_document.demo_bhunyapne2_task_exec_assume_role_document.json
+  assume_role_policy = data.aws_iam_policy_document.demo_bhunydapne2_task_exec_assume_role_document.json
 }
 
-data "aws_iam_policy_document" "demo_bhunyapne2_task_exec_assume_role_document" {
+data "aws_iam_policy_document" "demo_bhunydapne2_task_exec_assume_role_document" {
   statement {
     effect = "Allow"
     principals {
@@ -19,14 +19,14 @@ data "aws_iam_policy_document" "demo_bhunyapne2_task_exec_assume_role_document" 
   }
 }
 
-resource "aws_iam_role_policy" "demo_bhunyapne2_task_exec_policy" {
+resource "aws_iam_role_policy" "demo_bhunydapne2_task_exec_policy" {
   name   = "task_exec_policy"
-  role   = aws_iam_role.demo_bhunyapne2_task_exec.id
-  policy = data.aws_iam_policy_document.demo_bhunyapne2_task_exec_policy.json
+  role   = aws_iam_role.demo_bhunydapne2_task_exec.id
+  policy = data.aws_iam_policy_document.demo_bhunydapne2_task_exec_policy.json
 
 }
 
-data "aws_iam_policy_document" "demo_bhunyapne2_task_exec_policy" {
+data "aws_iam_policy_document" "demo_bhunydapne2_task_exec_policy" {
   statement {
     sid    = "ECR"
     effect = "Allow"
@@ -50,6 +50,6 @@ data "aws_iam_policy_document" "demo_bhunyapne2_task_exec_policy" {
   }
 }
 
-output "demo_bhunyapne2_task_exec_arn" {
-  value = aws_iam_role.demo_bhunyapne2_task_exec.arn
+output "demo_bhunydapne2_task_exec_arn" {
+  value = aws_iam_role.demo_bhunydapne2_task_exec.arn
 }
