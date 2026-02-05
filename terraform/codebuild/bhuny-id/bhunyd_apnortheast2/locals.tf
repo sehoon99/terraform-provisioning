@@ -49,4 +49,5 @@ locals {
       env_value = "demoapp-bhunyd_apnortheast2"
     },
   ]
+  test_envirnoment_variables = []
 }
