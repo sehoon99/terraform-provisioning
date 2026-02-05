@@ -76,7 +76,8 @@ data "aws_iam_policy_document" "codebuild_deployment_operation_document" {
       "*"
     ]
     actions = [
-      "iam:PassRole"
+      "iam:PassRole",
+      "iam:CreateServiceLinkedRole"
     ]
   }
 
