@@ -13,7 +13,7 @@ variable "atlantis_user" {
 # Add all account ID to here 
 variable "account_id" {
   default = {
-    id     = "066346343248"
+    id     = "633309913072"
     art-id = "816736805842"
   }
 }
@@ -23,25 +23,25 @@ variable "account_id" {
 variable "remote_state" {
   default = {
     vpc = {
-      tmcd_apnortheast2 = {
-        bucket = "zerone-id-apnortheast2-tfstate"
-        key    = "provisioning/terraform/vpc/tmcd_apnortheast2/terraform.tfstate"
+      bhunyd_apnortheast2 = {
+        bucket = "bhuny-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/vpc/bhunyd_apnortheast2/terraform.tfstate"
         region = "ap-northeast-2"
       }
     }
     iam = {
-      zerone-id = {
-        bucket = "zerone-id-apnortheast2-tfstate"
-        key    = "provisioning/terraform/iam/zerone-id/terraform.tfstate"
+      bhuny-id = {
+        bucket = "bhuny-id-apnortheast2-tfstate"
+        key    = "provisioning/terraform/iam/bhuny-id/terraform.tfstate"
         region = "ap-northeast-2"
       }
     }
 
     kms = {
-      zerone-id = {
+      bhuny-id = {
         apne2 = {
-          bucket = "zerone-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/kms/zerone-id/ap-northeast-2/terraform.tfstate"
+          bucket = "bhuny-id-apnortheast2-tfstate"
+          key    = "provisioning/terraform/kms/bhuny-id/ap-northeast-2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
@@ -49,19 +49,19 @@ variable "remote_state" {
 
     ecs = {
       nginx = {
-        tmcdapne2 = {
-          bucket = "zerone-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/ecs/nginx/tmcd_apnortheast2/terraform.tfstate"
+        bhunydapne2 = {
+          bucket = "bhuny-id-apnortheast2-tfstate"
+          key    = "provisioning/terraform/ecs/nginx/bhunyd_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }
     }
 
     security_group = {
-      zerone-id = {
-        tmcdapne2 = {
-          bucket = "zerone-id-apnortheast2-tfstate"
-          key    = "provisioning/terraform/securitygroup/zerone-id/tmcd_apnortheast2/terraform.tfstate"
+      bhuny-id = {
+        bhunydapne2 = {
+          bucket = "bhuny-id-apnortheast2-tfstate"
+          key    = "provisioning/terraform/securitygroup/bhuny-id/bhunyd_apnortheast2/terraform.tfstate"
           region = "ap-northeast-2"
         }
       }

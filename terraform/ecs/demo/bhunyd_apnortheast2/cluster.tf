@@ -1,6 +1,6 @@
 module "ecs_cluster" {
   source = "terraform-aws-modules/ecs/aws//modules/cluster"
-
+  version ="5.7.0"
   cluster_name = local.name
 
   # Capacity provider
@@ -16,6 +16,6 @@ module "ecs_cluster" {
         weight = 1
       }
     }
-  }  
+  }
   tags = local.tags
 }
