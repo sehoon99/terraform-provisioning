@@ -13,5 +13,5 @@ module "deployment_test" {
   buildspec              = "buildspec-test.yml"
   image_credentials_type = "CODEBUILD"
   os_type                = "LINUX_CONTAINER"
-  environment_variables  = local.jenkins_envirement_variables
+  environment_variables  = local.test_envirnement_variables
 }
