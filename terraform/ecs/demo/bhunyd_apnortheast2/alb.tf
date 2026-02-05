@@ -30,7 +30,7 @@ module "alb" {
   }
   route53_records = {
     demo = {
-      zone_id = var.r53_variables.terraform_devart_tv_zone_id
+      zone_id = var.r53_variables.ai_news_tracker_com_zone_id
       name    = "demo"
       type    = "A"
     }
@@ -39,7 +39,7 @@ module "alb" {
     blue = {
       port            = 443
       protocol        = "HTTPS"
-      certificate_arn = var.r53_variables.star_terraform_devart_tv_acm_apne2_arn
+      certificate_arn = var.r53_variables.ai_news_tracker_com_acm_apne2_arn
       forward = {
         target_group_key = "blue"
       }

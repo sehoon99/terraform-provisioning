@@ -3,7 +3,7 @@
 ################################################################################
 module "ecs_service" {
   source = "terraform-aws-modules/ecs/aws//modules/service"
-
+  version = "5.7.0"
   name        = local.name
   cluster_arn = module.ecs_cluster.arn
 
@@ -19,8 +19,8 @@ module "ecs_service" {
 
   create_tasks_iam_role     = false
   create_task_exec_iam_role = false
-  task_exec_iam_role_arn    = data.terraform_remote_state.iam.outputs.demo_tmcdapne2_task_exec_arn
-  tasks_iam_role_arn        = data.terraform_remote_state.iam.outputs.demo_tmcdapne2_task_arn
+  task_exec_iam_role_arn    = data.terraform_remote_state.iam.outputs.demo_bhunydapne2_task_exec_arn
+  tasks_iam_role_arn        = data.terraform_remote_state.iam.outputs.demo_bhunydapne2_task_arn
   # Container definition(s)
   container_definitions = {
     (local.container_name) = {
@@ -64,29 +64,48 @@ module "ecs_service" {
       container_port   = local.container_port
     }
   }
-
-  subnet_ids = data.terraform_remote_state.vpc.outputs.private_subnets
-  security_group_rules = {
-    alb_ingress_8080 = {
-      type                     = "ingress"
-      from_port                = local.container_port
-      to_port                  = local.container_port
-      protocol                 = "tcp"
-      description              = "Service port"
-      source_security_group_id = module.alb.security_group_id
-    }
-    egress_all = {
-      type        = "egress"
-      from_port   = 0
-      to_port     = 0
-      protocol    = "-1"
-      cidr_blocks = ["0.0.0.0/0"]
-    }
-  }
-
-  service_tags = {
-    "ServiceTag" = "Tag on service level"
-  }
+ 
+  subnet_ids            = data.terraform_remote_state.vpc.outputs.private_subnets
+  create_security_group = false
+  security_group_ids    = [aws_security_group.ecs_service.id]
+  # security_group_rules = {
+  #   alb_ingress_8080 = {
+  #     type                     = "ingress"
+  #     from_port                = local.container_port
+  #     to_port                  = local.container_port
+  #     protocol                 = "tcp"
+  #     description              = "Service port"
+  #     source_security_group_id = module.alb.security_group_id
+  #   }
+  #   egress_all = {
+  #     type        = "egress"
+  #     from_port   = 0
+  #     to_port     = 0
+  #     protocol    = "-1"
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   }
+  # }
 
   tags = local.tags
 }
+
+  resource "aws_security_group" "ecs_service" {                  
+    name        = "${local.name}-ecs-service"                    
+    vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id 
+                                                                 
+    ingress {                                                    
+      from_port       = local.container_port                     
+      to_port         = local.container_port                     
+      protocol        = "tcp"                                    
+      security_groups = [module.alb.security_group_id]           
+    }                                                            
+                                                                 
+    egress {                                                     
+      from_port   = 0                                            
+      to_port     = 0                                            
+      protocol    = "-1"                                         
+      cidr_blocks = ["0.0.0.0/0"]                                
+    }                                                            
+                                                                 
+    tags = local.tags                                            
+  }
