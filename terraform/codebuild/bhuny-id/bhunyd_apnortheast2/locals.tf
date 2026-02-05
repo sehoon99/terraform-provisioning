@@ -24,7 +24,7 @@ locals {
     },
     {
       env_name  = "ORG_NAME",
-      env_value = " obhuny"
+      env_value = "obhuny"
     },
     {
       env_name  = "TEAM_NAME",
